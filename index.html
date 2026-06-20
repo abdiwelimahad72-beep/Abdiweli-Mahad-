@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Two Layout - Fixed</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 15px;
+            background-color: #ffffff;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        /* Weelka weyn ee cagaaran - Waxaan siinnay ballaar go'an si uusan hoos ugu stretch-gureyn */
+        .wrapper {
+            text-align: center;
+            border: 2px solid #a3cf62; 
+            padding: 10px;
+            width: 900px; /* Ballarkaan wuxuu hubiyaa in layout-ku uusan isku dhex dumin */
+            margin: 0 auto;
+            background-color: blue;
+        }
+
+        /* Si moobilka loogu dhex arki karo isagoo dhan oo geeska loo simayo */
+        /*@media (max-width: 930px) {*/
+            body {
+                overflow-x: auto; /* Wuxuu u ogolaanayaa moobilka in geeska loo siibo */
+            }
+        }
+
+        /* Qaybta Madaxa (Header) */
+        header {
+            border: 1px solid #c5b888; 
+            padding: 15px;
+            margin-bottom: 10px;
+            background-color: #fdfbf7;
+        }
+
+        header h1 {
+            color: #876239;
+            font-size: 24px;
+            font-weight: normal;
+        }
+
+        /* Qaybta Dhexe */
+        .main-container {
+            display: flex; 
+            margin-bottom: 10px;
+        }
+        .sidebar-left a {
+          background-color: vilot;
+          text-decoration: none;
+
+        /* Naqshadda sanduuqyada dhexe */
+        .sidebar-left, .content-area, .sidebar-right {
+            border: 1px solid #c5a880;
+            padding: 15px;
+            background-color: #fafafa;
+            min-height: 140px; /* Dherer go'an oo kooban sida sawirkii hore */
+        }
+
+        /* Left Sidebar - width go'an */
+        .sidebar-left {
+            width: 80px; 
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .sidebar-left a {
+            color: #7b5998;
+            text-decoration: underline;
+            font-size: 14px;
+        }
+
+        /* Qaybta weyn ee fariinta iyo sawirka */
+        .content-area {
+            background-color: pink;
+            flex-grow: 1;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        /* Sanduuqa sawirka */
+        .image-box {
+            width: 130px;
+            height: 95px;
+            flex-shrink: 0; 
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .text-box {
+            background-color: pink;
+            color: #444;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Right Sidebar - width go'an */
+        .sidebar-right {
+            width: 80px; 
+            flex-shrink: 0;
+            color: #8c6239;
+            font-size: 14px;
+        }
+
+        /* Qaybta Hoose (Footer) */
+        footer {
+            border: 1px solid #c5a880;
+            padding: 15px;
+            text-align: center;
+            color: #333;
+            font-size: 14px;
+            background-color: #fdfbf7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        
+        <header>
+            <h1>Example two layout</h1>
+        </header>
+
+        <div class="main-container">
+            <div class="sidebar-left">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+            </div>
+
+            <div class="content-area">
+                <div class="image-box">
+                    <img src="abdiweli.png" alt="Sawirka">
+                </div>
+                
+                <div class="text-box">
+                 Waxaan ku noolahay magaalo qurux badan oo leh jawi deggan iyo dad dabeecad wanaagsan, taas oo iga caawisa inaan maalin kasta ku bilaabo xamaasad iyo firfircooni. Marka laga yimaado nolosha caadiga ah ee magaalada, waxaan ahay qof aad u jecel akhriska buugaagta, gaar ahaan kuwa ka hadla horumarinta nafta iyo taariikhda, sababtoo ah waxay ii furaan daaqado cusub oo aqooneed. Sidoo kale, waxaan aad u xiiseeyaa ku raaxaysiga dabeecada, socodka xilliga galabtii, iyo barashada xirfado cusub oo dhanka tignoolajiyada ah. Hiwaayadahani waxay noloshayda u yeelaan midab iyo macno gaar ah, waxayna igu dhiirrigeliyaan inaan mar walba naftayda horumariyo. semesterka 2aad.
+                </div>
+            </div>
+
+            <div class="sidebar-right">
+                Right<br>side
+            </div>
+        </div>
+
+        <footer>
+            &copy; CNS253
+        </footer>
+
+    </div>
+
+</body>
+  </html>
